@@ -6,9 +6,8 @@ import { MdMyLocation } from "react-icons/md";
 import { MdOutlineLocationOn } from "react-icons/md";
 import SearchBox from './SearchBox';
 
-type Props = {}
 
-const Navbar = ({}: Props) => {
+const Navbar = () => {
   return (
     <nav className='shadow-sm sticky top-0 left-0 z-50 bg-white'>
         <div className='h-20 w-full flex justify-between items-center max-w-7xl px-3 mx-auto'>
@@ -22,7 +21,7 @@ const Navbar = ({}: Props) => {
                 <MdOutlineLocationOn  className='text-3xl'/>
                 <p className='text-sm text-slate-900/80'>Gaza</p>
                 <div>
-                  <SearchBox />
+                  <SearchBox  />
                 </div>
             </section>
         </div>
