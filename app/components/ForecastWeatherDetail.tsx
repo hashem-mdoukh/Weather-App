@@ -2,7 +2,7 @@ import React from 'react'
 import Container from './Container'
 import WeatherIcon from "./WeatherIcon";
 import WeatherDetails, { WeatherDetailProps } from "./WeatherDetails";
-import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
+import { convertKilvenToCelsius } from '../utils/convertKilvenToCelsius';
 
 export interface ForecastWeatherDetailProps extends WeatherDetailProps {
   weatehrIcon: string;
@@ -16,7 +16,7 @@ export interface ForecastWeatherDetailProps extends WeatherDetailProps {
 }
 
 
-const ForecastWeatherDetail = ({}: ForecastWeatherDetailProps) => {
+const ForecastWeatherDetail = ( props: ForecastWeatherDetailProps) => {
   
   const {
     weatehrIcon = "02d",
@@ -36,15 +36,15 @@ const ForecastWeatherDetail = ({}: ForecastWeatherDetailProps) => {
         <div className=" flex flex-col gap-1 items-center">
           <WeatherIcon iconName={weatehrIcon} />
           <p>{date}</p>
-          <p className="text-sm">{day} </p>
+          <p className="text-sm">{day}</p>
         </div>
 
         {/*  */}
         <div className="flex flex-col px-4">
-          <span className="text-5xl">{convertKelvinToCelsius(temp ?? 0)}°</span>
+          <span className="text-5xl">{convertKilvenToCelsius(temp ?? 0)}°</span>
           <p className="text-xs space-x-1 whitespace-nowrap">
             <span> Feels like</span>
-            <span>{convertKelvinToCelsius(feels_like ?? 0)}°</span>
+            <span>{convertKilvenToCelsius(feels_like ?? 0)}°</span>
           </p>
           <p className="capitalize"> {description}</p>
         </div>
